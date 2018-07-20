@@ -42,11 +42,13 @@ def get_type_info(url, pokemon):
     return damage
         
 def get_poke_name(poke_dict):
-   
+ 
     for i in poke_dict.keys():
-        if type(poke_dict[i]) == int:
-
+        if type(poke_dict[i]) == int: 
             return i
+   
+        
+    
     
 def winner():
     if arguments() == True:
@@ -59,16 +61,20 @@ def winner():
                     damage = (get_type_info(first_pokemon[i], second_pokemon))
                     if damage.endswith("to"):
                         print(get_poke_name(second_pokemon))
+                        break
                     else:
-                        print(get_poke_name(first_pokemon))                   
+                        print(get_poke_name(first_pokemon))
+                        break
         else:  
             for i in (second_pokemon.keys()):
                 if (type(second_pokemon[i])) == str and second_pokemon[i].startswith("https"):
                     damage = (get_type_info(second_pokemon[i], first_pokemon))
                     if damage.endswith("to"):
                         print(get_poke_name(second_pokemon))
+                        break
                     else:
                         print(get_poke_name(first_pokemon))
+                        break
     else:
         print("wrong number of arguments")
     
